@@ -11,7 +11,10 @@ app = MultiPage()
 
 
 # Title of the main page
-st.title("Test Streamlit")
+title="Test Streamlit"
+title_front ="<div><span class='highlight blue'>{}</span></div>".format(title)
+st.markdown(title_front, unsafe_allow_html=True)
+
 
 # Add all your applications (pages) here
 app.add_page("Page n°1", page1.display)

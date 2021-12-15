@@ -5,8 +5,7 @@ class MultiPage:
     """Framework for combining multiple streamlit applications."""
 
     def __init__(self) -> None:
-        # Use the full page instead of a narrow central column
-        st.set_page_config(layout="wide")
+    
     
         """Constructor class to generate a list which will store all our applications as an instance variable."""
         self.pages = []

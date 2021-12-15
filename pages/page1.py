@@ -1,23 +1,35 @@
 import streamlit as st
 from PIL import Image
+import load_css as css
+
+
+
+
+css.local_css("css/css_page1.css")
+ 
 
 def display():
-
-    var = '5%'
-    st.title("Formule de vente")
-    st.write ("welcome to the page 1")
-
     
+    
+    #variables
+    var = '5%'
+    arrow_down = Image.open('images/arrow_down.png')
 
+    #header
+    st.title("Formule de vente")
+    st.header("welcome to the page 1")
+    
+    
     #rowA
     colA1, colA2, colA3, colA4, colA5, colA6, colA7, = st.columns(7)
-    colA4.write("chiffre 1")
+    colA4.markdown("chiffre", unsafe_allow_html=True)
     colA4.metric("CA", "70M", var)
 
     #rowB
     colB1, colB2, colB3, colB4, colB5, colB6, colB7, = st.columns(7)
-    image = Image.open('images/arrow_down.png')
-    colB2.image(image)
+    
+    colB2.image(arrow_down)
+    colB6.image(arrow_down)
 
     
 
@@ -33,7 +45,12 @@ def display():
     colC6.metric("CA", "70M", var3)
 
     #rowD
-    
+    colD1, colD2, colD3, colD4, colD5, colD6, colD7, = st.columns(7)
+    colD1.image(arrow_down)
+    colD3.image(arrow_down)
+    colD6.image(arrow_down)
+    colD7.image(arrow_down)
+    colD5.image(arrow_down)
 
     #rowE
     colD1, colD2, colD3, colD4, colD5, colD6, colD7, = st.columns(7)
@@ -55,4 +72,4 @@ def display():
     colD7.metric("CA", "70M", var,"off")
     
     
-    
+     
