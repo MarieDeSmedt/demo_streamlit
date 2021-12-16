@@ -1,36 +1,39 @@
 import streamlit as st
-import streamlit as st
-import numpy as np
+import load_css as css
 import pandas as pd
 
+css.local_css("css/css_page2.css")
 
+#def variables
+select_perimetre= ['secteur','categorie','marché']
+select_comparaison= ['secteur','categorie','marché']
 
 def display():
-    simple, style, table = display_sidebar()
+    display_sidebar()
     display_header()
-    display_body(simple, style, table)
+    display_body()
     
 
 def display_sidebar():
-    simple =st.sidebar.checkbox('affichage dataframe simple', value=True)
-    style =st.sidebar.checkbox('affichage avec style')
-    table =st.sidebar.checkbox('affichage sous forme de table')
-    
-    st.sidebar.button('bouton page3')   
-    return simple, style, table
-    
-def display_header():
-    st.title("page 3")
+    st.sidebar.button('bouton page2')   
+    st.sidebar.selectbox("Périmètre d'étude",select_perimetre)
+    st.sidebar.selectbox("Périmètre de comparaison",select_comparaison)
 
-def display_body(simple, style, table):
+def display_header():
+    st.title("page 2")
+
+def display_body():
+    st.markdown("welcome to the page 2", unsafe_allow_html=True)
+
     data = pd.read_csv("CSV/Streamlit_test.csv")
-    dataframe = data.head(5)
-    if simple:
-        st.write('affichage dataframe simple')
-        st.dataframe(dataframe)
-    if style:
-        st.write('affichage avec style')
-        st.dataframe(dataframe.style.highlight_max(axis=0))
-    if table:
-        st.write('affichage sous forme de table')
-        st.table(dataframe)
+
+    # Create a list of possible values and multiselect menu with them in it.
+    PERSONAE = data['personaeSegmentLabel'].unique()
+    PERSONAE_SELECTED = st.multiselect('Select segmentation', PERSONAE,default=PERSONAE)
+
+    # Mask to filter dataframe
+    mask_personae = data['personaeSegmentLabel'].isin(PERSONAE_SELECTED)
+
+    data = data[mask_personae]
+    
+    st.table(data)
