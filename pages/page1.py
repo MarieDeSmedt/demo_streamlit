@@ -27,6 +27,8 @@ def display_header():
     st.header("welcome to the page 1")
 
 def display_body():
+
+    st.text_input("Inscrire ici la variable a retrouver page map", key="map")
     
     #variables
     var = '5%'

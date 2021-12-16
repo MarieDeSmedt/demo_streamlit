@@ -14,6 +14,12 @@ def display_slider():
 
 
 def display_body(nb_points):
+
+       # You can access the value at any point with:
+    map = st.session_state.map
+    st.write('voici la variable passée en page 1:',map)
+
+
     map_data = pd.DataFrame(
     np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
     columns=['lat', 'lon'])
