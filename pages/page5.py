@@ -4,10 +4,10 @@ import pandas as pd
 
 
 def display():
-    nb_points =display_slicer()
+    nb_points =display_slider()
     display_body(nb_points)
 
-def display_slicer():
+def display_slider():
     x = st.sidebar.slider('NB DE POINTS',5,100)  
     st.write('Nombre de points affichés',x)
     return x
