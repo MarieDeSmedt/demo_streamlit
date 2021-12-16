@@ -25,14 +25,14 @@ def display_header():
 def display_body():
     st.markdown("welcome to the page 2", unsafe_allow_html=True)
 
-    data = pd.read_csv("Streamit_test.csv")
+    data = pd.read_csv("CSV/Streamlit_test.csv")
 
     # Create a list of possible values and multiselect menu with them in it.
-    COUNTRIES = data['country'].unique()
-    COUNTRIES_SELECTED = st.multiselect('Select countries', COUNTRIES)
+    PERSONAE = data['personaeSegmentLabel'].unique()
+    PERSONAE_SELECTED = st.multiselect('Select segmentation', PERSONAE,default=PERSONAE)
 
     # Mask to filter dataframe
-    mask_countries = data['country'].isin(COUNTRIES_SELECTED)
+    mask_personae = data['personaeSegmentLabel'].isin(PERSONAE_SELECTED)
 
-    data = data[mask_countries]
+    data = data[mask_personae]
     st.table(data)

@@ -22,7 +22,8 @@ def display_header():
     st.title("page 3")
 
 def display_body(simple, style, table):
-    dataframe = pd.DataFrame(np.random.randn(10, 20), columns=('col %d' % i for i in range(20)))
+    data = pd.read_csv("CSV/Streamlit_test.csv")
+    dataframe = data.head(5)
     if simple:
         st.write('affichage dataframe simple')
         st.dataframe(dataframe)
