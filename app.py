@@ -6,7 +6,7 @@ st.set_page_config(layout="wide")
 # Custom imports 
 from multipage import MultiPage
 
-from pages import page1, page2, page3, page4
+from pages import page1, page2, page3, page4, page5
 
 # Create an instance of the app 
 app = MultiPage()
@@ -16,7 +16,7 @@ app.add_page("Formule de vente", page1.display)
 app.add_page("affichage dataframe/table", page3.display)
 app.add_page("segmentation", page2.display)
 app.add_page("chart", page4.display)
-app.add_page("", page2.display)
+app.add_page("map", page5.display)
 app.add_page("", page3.display)
 app.add_page("", page1.display)
 
