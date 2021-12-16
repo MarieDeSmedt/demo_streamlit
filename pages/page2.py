@@ -35,4 +35,5 @@ def display_body():
     mask_personae = data['personaeSegmentLabel'].isin(PERSONAE_SELECTED)
 
     data = data[mask_personae]
+    
     st.table(data)

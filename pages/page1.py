@@ -13,8 +13,7 @@ def display():
     css.local_css("css/css_page1.css")
     display_sidebar()
     display_header()
-    display_body()
-    
+    display_body()    
 
 def display_sidebar():
     st.sidebar.button('bouton page1')  

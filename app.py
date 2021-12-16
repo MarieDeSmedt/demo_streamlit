@@ -5,6 +5,7 @@ st.set_page_config(layout="wide")
 
 # Custom imports 
 from multipage import MultiPage
+
 from pages import page1, page2, page3, page4
 
 # Create an instance of the app 
