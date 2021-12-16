@@ -12,9 +12,9 @@ def display():
     
 
 def display_sidebar():
-    simple =st.checkbox('affichage dataframe simple', value=True)
-    style =st.checkbox('affichage avec style')
-    table =st.checkbox('affichage sous forme de table')
+    simple =st.sidebar.checkbox('affichage dataframe simple', value=True)
+    style =st.sidebar.checkbox('affichage avec style')
+    table =st.sidebar.checkbox('affichage sous forme de table')
     st.sidebar.button('bouton page3')   
     return simple, style, table
     
