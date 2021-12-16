@@ -6,18 +6,36 @@ import load_css as css
 
 
 css.local_css("css/css_page1.css")
- 
 
-def display():
+select_perimetre= ['secteur','categorie','marché']
+select_comparaison= ['secteur','categorie','marché']
     
+    
+def display():
+    display_sidebar()
+    display_header()
+    display_body()
+    
+
+def display_sidebar():
+    st.sidebar.button('bouton page1')  
+    st.sidebar.selectbox("Périmètre d'étude",select_perimetre)
+    st.sidebar.selectbox("Périmètre de comparaison",select_comparaison)
+    
+def display_header():
+     #header
+    title="Formule de vente"
+    title_front ="<div><span class='highlight blue'>{}</span></div>".format(title)
+    st.markdown(title_front, unsafe_allow_html=True)
+    st.header("welcome to the page 1")
+
+def display_body():
     
     #variables
     var = '5%'
     arrow_down = Image.open('images/arrow_down.png')
 
-    #header
-    st.title("Formule de vente")
-    st.header("welcome to the page 1")
+   
     
     
     #rowA
@@ -70,6 +88,3 @@ def display():
 
     colD7.write("pas de couleur")
     colD7.metric("CA", "70M", var,"off")
-    
-    
-     
