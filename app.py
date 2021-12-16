@@ -11,13 +11,13 @@ from pages import page1, page2, page3
 app = MultiPage()
 
 # Add all your applications (pages) here
-app.add_page("Synthèse", page1.display)
-app.add_page("Analyse détaillée", page2.display)
-app.add_page("Contexte", page3.display)
-app.add_page("Analyse comparative", page1.display)
-app.add_page("PMG", page2.display)
-app.add_page("Segmentation", page3.display)
-app.add_page("Points de vente", page1.display)
+app.add_page("Formule de vente", page1.display)
+app.add_page("affichage dataframe/table", page3.display)
+app.add_page("", page2.display)
+app.add_page("", page2.display)
+app.add_page("", page2.display)
+app.add_page("", page3.display)
+app.add_page("", page1.display)
 
 # The main app
 app.run()

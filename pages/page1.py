@@ -5,13 +5,12 @@ import load_css as css
 
 
 
-css.local_css("css/css_page1.css")
-
 select_perimetre= ['secteur','categorie','marché']
 select_comparaison= ['secteur','categorie','marché']
     
     
 def display():
+    css.local_css("css/css_page1.css")
     display_sidebar()
     display_header()
     display_body()
@@ -23,7 +22,6 @@ def display_sidebar():
     st.sidebar.selectbox("Périmètre de comparaison",select_comparaison)
     
 def display_header():
-     #header
     title="Formule de vente"
     title_front ="<div><span class='highlight blue'>{}</span></div>".format(title)
     st.markdown(title_front, unsafe_allow_html=True)
