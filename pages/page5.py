@@ -8,7 +8,7 @@ def display():
     display_body(nb_points)
 
 def display_slicer():
-    x = st.sidebar.slider('NB DE POINTS',5,15)  
+    x = st.sidebar.slider('NB DE POINTS',5,100)  
     st.write('Nombre de points affichés',x)
     return x
 
