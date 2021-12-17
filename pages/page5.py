@@ -15,8 +15,8 @@ def display_slider():
 
 def display_body(nb_points):
 
-       # You can access the value at any point with:
-    map = st.session_state.map
+    #map = st.session_state.map
+    
     st.write('voici la variable passée en page 1:',map)
 
 

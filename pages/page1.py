@@ -28,7 +28,7 @@ def display_header():
 
 def display_body():
 
-    st.text_input("Inscrire ici la variable a retrouver page map", key="map")
+   # st.text_input("Inscrire ici la variable a retrouver page map", key="map")
     
     #variables
     var = '5%'
@@ -47,8 +47,6 @@ def display_body():
     
     colB2.image(arrow_down)
     colB6.image(arrow_down)
-
-    
 
     #rowC
     colC1, colC2, colC3, colC4, colC5, colC6, colC7, = st.columns(7)
